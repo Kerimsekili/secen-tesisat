@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <title>Seçen Tesisat</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
@@ -22,25 +22,63 @@
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/animate/animate.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      href="lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
     <link
       href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="css/bootstrap.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Add Lazy Loading Polyfill for older browsers -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if ("loading" in HTMLImageElement.prototype) {
+          const images = document.querySelectorAll("img");
+          images.forEach((img) => {
+            img.src = img.dataset.src;
+          });
+        } else {
+          const script = document.createElement("script");
+          script.src =
+            "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js";
+          document.body.appendChild(script);
+        }
+      });
+    </script>
   </head>
 
   <body>
@@ -54,7 +92,7 @@
         style="width: 3rem; height: 3rem"
         role="status"
       >
-        <span class="sr-only">Loading...</span>
+        <span class="visually-hidden">Loading...</span>
       </div>
     </div>
     <!-- Spinner End -->
@@ -69,25 +107,36 @@
         </div>
         <div class="col-lg-9 col-md-12 text-end">
           <div class="h-100 d-inline-flex align-items-center me-4">
-            <i class="fa fa-map-marker-alt text-primary me-2"></i>
+            <i
+              class="fa fa-map-marker-alt text-primary me-2"
+              aria-hidden="true"
+            ></i>
             <p class="m-0">Ankara , Türkiye</p>
           </div>
-          <!-- <div class="h-100 d-inline-flex align-items-center me-4">
-            <i class="far fa-envelope-open text-primary me-2"></i>
-            <p class="m-0">info@example.com</p>
-          </div> -->
           <div class="h-100 d-inline-flex align-items-center">
-            <a class="btn btn-sm-square bg-white text-primary me-1" href=""
-              ><i class="fab fa-facebook-f"></i
+            <a
+              class="btn btn-sm-square bg-white text-primary me-1"
+              href="#"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f" aria-hidden="true"></i
             ></a>
-            <a class="btn btn-sm-square bg-white text-primary me-1" href=""
-              ><i class="fab fa-twitter"></i
+            <a
+              class="btn btn-sm-square bg-white text-primary me-1"
+              href="#"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter" aria-hidden="true"></i
             ></a>
-            <a class="btn btn-sm-square bg-white text-primary me-1" href=""
-              ><i class="fab fa-linkedin-in"></i
+            <a
+              class="btn btn-sm-square bg-white text-primary me-1"
+              href="#"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in" aria-hidden="true"></i
             ></a>
-            <a class="btn btn-sm-square bg-white text-primary me-0" href=""
-              ><i class="fab fa-instagram"></i
+            <a
+              class="btn btn-sm-square bg-white text-primary me-0"
+              href="#"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram" aria-hidden="true"></i
             ></a>
           </div>
         </div>
@@ -101,7 +150,7 @@
         class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4"
       >
         <a
-          href=""
+          href="#"
           class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none"
         >
           <h1 class="text-primary m-0">Seçen Tesisat</h1>
@@ -111,6 +160,9 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="fa fa-bars"></span>
         </button>
@@ -120,19 +172,6 @@
             <a href="#hakkimizda" class="nav-item nav-link">Hakkimizda</a>
             <a href="#services" class="nav-item nav-link">Servisler</a>
             <a href="#references" class="nav-item nav-link">Referanslar</a>
-            <!-- <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                >Sayfalar</a
-              >
-              <div class="dropdown-menu fade-up m-0">
-                <a href="booking.html" class="dropdown-item">Randevu</a>
-                <a href="team.html" class="dropdown-item">Teknisyenlerimiz</a>
-                <a href="testimonial.html" class="dropdown-item">Referanslar</a>
-              </div>
-            </div> -->
           </div>
           <div
             class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center"
@@ -141,7 +180,7 @@
               class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
               style="width: 45px; height: 45px"
             >
-              <i class="fa fa-phone-alt text-primary"></i>
+              <i class="fa fa-phone-alt text-primary" aria-hidden="true"></i>
             </div>
             <div class="ms-3">
               <p class="mb-1 text-white">7/24 Ulaşım Hattı</p>
@@ -157,7 +196,12 @@
     <div class="container-fluid p-0 mb-5">
       <div class="owl-carousel header-carousel position-relative">
         <div class="owl-carousel-item position-relative">
-          <img class="img-fluid" src="img/carousel-1.jpg" alt="" />
+          <img
+            class="img-fluid"
+            data-src="img/carousel-1.jpg"
+            alt="Kapsamlı Tesisat Hizmetleri"
+            loading="lazy"
+          />
           <div
             class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
             style="background: rgba(0, 0, 0, 0.4)"
@@ -188,7 +232,12 @@
           </div>
         </div>
         <div class="owl-carousel-item position-relative">
-          <img class="img-fluid" src="img/carousel-2.jpg" alt="" />
+          <img
+            class="img-fluid"
+            data-src="img/carousel-2.jpg"
+            alt="Su Kaçak Tespiti"
+            loading="lazy"
+          />
           <div
             class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
             style="background: rgba(0, 0, 0, 0.4)"
@@ -206,19 +255,9 @@
                   </h1>
                   <p class="fs-5 fw-medium text-white mb-4 pb-2">
                     Kırmadan dökmeden teknolojik cihazlarla su kaçaklarını
-                    buluyoruz. Ankaranın bütün ilçelerine fiyat farksız müdahele
+                    buluyoruz. Ankaranın bütün ilçelerine fiyat farksız müdahale
                     ediyoruz.
                   </p>
-                  <!-- <a
-                    href=""
-                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
-                    >Read More</a
-                  >
-                  <a
-                    href=""
-                    class="btn btn-secondary py-md-3 px-md-5 animated slideInRight"
-                    >Free Quote</a
-                  > -->
                 </div>
               </div>
             </div>
@@ -239,8 +278,9 @@
             <div class="overflow-hidden">
               <img
                 class="img-fluid w-100 h-100"
-                src="img/service-1.jpg"
-                alt=""
+                data-src="img/service-1.jpg"
+                alt="0'dan Tesisat Kurulumu"
+                loading="lazy"
               />
             </div>
             <div
@@ -249,8 +289,9 @@
               <h5 class="text-truncate me-3 mb-0">0'dan Tesisat Kurulumu</h5>
               <a
                 class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0"
-                href=""
-                ><i class="fa fa-arrow-right"></i
+                href="#"
+                aria-label="Read more about 0'dan Tesisat Kurulumu"
+                ><i class="fa fa-arrow-right" aria-hidden="true"></i
               ></a>
             </div>
           </div>
@@ -261,8 +302,9 @@
             <div class="overflow-hidden">
               <img
                 class="img-fluid w-100 h-100"
-                src="img/service-2.jpg"
-                alt=""
+                data-src="img/service-2.jpg"
+                alt="Tıkanıklık Açma"
+                loading="lazy"
               />
             </div>
             <div
@@ -271,8 +313,9 @@
               <h5 class="text-truncate me-3 mb-0">Tıkanıklık Açma</h5>
               <a
                 class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0"
-                href=""
-                ><i class="fa fa-arrow-right"></i
+                href="#"
+                aria-label="Read more about Tıkanıklık Açma"
+                ><i class="fa fa-arrow-right" aria-hidden="true"></i
               ></a>
             </div>
           </div>
@@ -283,8 +326,9 @@
             <div class="overflow-hidden">
               <img
                 class="img-fluid w-100 h-100"
-                src="img/service-3.jpg"
-                alt=""
+                data-src="img/service-3.jpg"
+                alt="Kamera ile Su Kaçak Tespiti"
+                loading="lazy"
               />
             </div>
             <div
@@ -295,8 +339,9 @@
               </h5>
               <a
                 class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0"
-                href=""
-                ><i class="fa fa-arrow-right"></i
+                href="#"
+                aria-label="Read more about Kamera ile Su Kaçak Tespiti"
+                ><i class="fa fa-arrow-right" aria-hidden="true"></i
               ></a>
             </div>
           </div>
@@ -320,23 +365,26 @@
               sizlere en hızlı ve etkili çözümleri sunmak için buradayız.
             </p>
             <p class="fw-medium text-primary">
-              <i class="fa fa-check text-success me-3"></i>Konut & Ticari
-              Tesisat Hizmetleri
+              <i class="fa fa-check text-success me-3" aria-hidden="true"></i
+              >Konut & Ticari Tesisat Hizmetleri
             </p>
             <p class="fw-medium text-primary">
-              <i class="fa fa-check text-success me-3"></i>Uygun Fiyata Kaliteli
-              Hizmet
+              <i class="fa fa-check text-success me-3" aria-hidden="true"></i
+              >Uygun Fiyata Kaliteli Hizmet
             </p>
             <p class="fw-medium text-primary">
-              <i class="fa fa-check text-success me-3"></i> 7/24 Acil Durum
-              Hizmetleri
+              <i class="fa fa-check text-success me-3" aria-hidden="true"></i>
+              7/24 Acil Durum Hizmetleri
             </p>
             <div class="bg-primary d-flex align-items-center p-4 mt-5">
               <div
                 class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
                 style="width: 60px; height: 60px"
               >
-                <i class="fa fa-phone-alt fa-2x text-primary"></i>
+                <i
+                  class="fa fa-phone-alt fa-2x text-primary"
+                  aria-hidden="true"
+                ></i>
               </div>
               <div class="ms-3">
                 <p class="fs-5 fw-medium mb-2 text-white">Acil Durum 7/24</p>
@@ -351,15 +399,17 @@
             >
               <img
                 class="position-absolute img-fluid w-100 h-100"
-                src="img/about-1.jpg"
+                data-src="img/about-1.jpg"
                 style="object-fit: cover; padding: 0 0 50px 100px"
-                alt=""
+                alt="Tesisat Ekibi"
+                loading="lazy"
               />
               <img
                 class="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50"
-                src="img/about-2.jpg"
+                data-src="img/about-2.jpg"
                 style="object-fit: cover"
-                alt=""
+                alt="Tesisat Hizmetleri"
+                loading="lazy"
               />
             </div>
           </div>
@@ -376,7 +426,7 @@
             class="col-md-6 col-lg-3 text-center wow fadeIn"
             data-wow-delay="0.1s"
           >
-            <i class="fa fa-check fa-2x text-white mb-3"></i>
+            <i class="fa fa-check fa-2x text-white mb-3" aria-hidden="true"></i>
             <h2 class="text-white mb-2" data-toggle="counter-up">10</h2>
             <p class="text-white mb-0">Yıllık Deneyim</p>
           </div>
@@ -384,7 +434,10 @@
             class="col-md-6 col-lg-3 text-center wow fadeIn"
             data-wow-delay="0.3s"
           >
-            <i class="fa fa-users-cog fa-2x text-white mb-3"></i>
+            <i
+              class="fa fa-users-cog fa-2x text-white mb-3"
+              aria-hidden="true"
+            ></i>
             <h2 class="text-white mb-2" data-toggle="counter-up">8</h2>
             <p class="text-white mb-0">Uzman Teknisyenlerimiz</p>
           </div>
@@ -392,7 +445,7 @@
             class="col-md-6 col-lg-3 text-center wow fadeIn"
             data-wow-delay="0.5s"
           >
-            <i class="fa fa-users fa-2x text-white mb-3"></i>
+            <i class="fa fa-users fa-2x text-white mb-3" aria-hidden="true"></i>
             <h2 class="text-white mb-2" data-toggle="counter-up">31693</h2>
             <p class="text-white mb-0">Memnun Müşteriler</p>
           </div>
@@ -400,7 +453,10 @@
             class="col-md-6 col-lg-3 text-center wow fadeIn"
             data-wow-delay="0.7s"
           >
-            <i class="fa fa-wrench fa-2x text-white mb-3"></i>
+            <i
+              class="fa fa-wrench fa-2x text-white mb-3"
+              aria-hidden="true"
+            ></i>
             <h2 class="text-white mb-2" data-toggle="counter-up">28.800</h2>
             <p class="text-white mb-0">Tamamlanan Proje</p>
           </div>
@@ -431,7 +487,7 @@
               data-wow-delay="0.1s"
             >
               <h6 class="text-secondary text-uppercase">Servislerimiz</h6>
-              <h1 class="mb-5">Servislerimizi Keşfetin</h1>
+              <h1 class="mb-5">Servislerimizi Keşfedin</h1>
             </div>
             <div
               class="owl-carousel service-carousel position-relative wow fadeInUp"
@@ -442,7 +498,10 @@
                   class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
                   style="width: 75px; height: 75px"
                 >
-                  <i class="fa fa-water fa-2x text-primary"></i>
+                  <i
+                    class="fa fa-water fa-2x text-primary"
+                    aria-hidden="true"
+                  ></i>
                 </div>
                 <h4 class="mb-3">Kanalizasyon Onarımı</h4>
                 <p>
@@ -451,14 +510,25 @@
                   kavuşturuyoruz
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>Kaliteli Servis
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Kaliteli Servis
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>Müşteri
-                  Memnuniyeti
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Müşteri Memnuniyeti
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>7/24 Destek
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >7/24 Destek
                 </p>
               </div>
               <div class="bg-light p-4">
@@ -466,7 +536,10 @@
                   class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
                   style="width: 75px; height: 75px"
                 >
-                  <i class="fa fa-toilet fa-2x text-primary"></i>
+                  <i
+                    class="fa fa-toilet fa-2x text-primary"
+                    aria-hidden="true"
+                  ></i>
                 </div>
                 <h4 class="mb-3">Tuvalet Borusu Onarımı</h4>
                 <p>
@@ -475,14 +548,25 @@
                   kavuşturuyoruz.
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>Kaliteli Servis
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Kaliteli Servis
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>Müşteri
-                  Memnuniyeti
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Müşteri Memnuniyeti
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>7/24 Destek
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >7/24 Destek
                 </p>
               </div>
               <div class="bg-light p-4">
@@ -490,18 +574,33 @@
                   class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
                   style="width: 75px; height: 75px"
                 >
-                  <i class="fa fa-shower fa-2x text-primary"></i>
+                  <i
+                    class="fa fa-shower fa-2x text-primary"
+                    aria-hidden="true"
+                  ></i>
                 </div>
                 <h4 class="mb-3">Tesisat Bakımı & Onarımı</h4>
                 <p>0'dan tesisat kurulumu yapılır ve yenilenir.</p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>Kırmadan Dökmeden
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Kırmadan Dökmeden
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>Kesin Çözümler
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Kesin Çözümler
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>7/24 Destek
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >7/24 Destek
                 </p>
               </div>
               <div class="bg-light p-4">
@@ -509,7 +608,10 @@
                   class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
                   style="width: 75px; height: 75px"
                 >
-                  <i class="fa fa-tint fa-2x text-primary"></i>
+                  <i
+                    class="fa fa-tint fa-2x text-primary"
+                    aria-hidden="true"
+                  ></i>
                 </div>
                 <h4 class="mb-3">Su Kaçak Tespiti</h4>
                 <p>
@@ -517,18 +619,26 @@
                   dökmeden tamir ediyoruz
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>Kaliteli Servis
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Kaliteli Servis
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>Müşteri
-                  Memnuniyeti
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Müşteri Memnuniyeti
                 </p>
                 <p class="text-primary fw-medium">
-                  <i class="fa fa-check text-success me-2"></i>7/24 Destek
+                  <i
+                    class="fa fa-check text-success me-2"
+                    aria-hidden="true"
+                  ></i
+                  >7/24 Destek
                 </p>
-                <!-- <a href="" class="btn bg-white text-primary w-100 mt-2"
-                  >Read More<i class="fa fa-arrow-right text-secondary ms-2"></i
-                ></a> -->
               </div>
             </div>
           </div>
@@ -537,64 +647,12 @@
     </div>
     <!-- Service End -->
 
-    <!-- Booking Start -->
-    <div class="container-fluid my-5 px-0">
-      <div class="video wow fadeInUp" data-wow-delay="0.1s">
-        <button
-          type="button"
-          class="btn-play"
-          data-bs-toggle="modal"
-          data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-          data-bs-target="#videoModal"
-        >
-          <span></span>
-        </button>
-
-        <div
-          class="modal fade"
-          id="videoModal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Youtube Video
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <!-- 16:9 aspect ratio -->
-                <div class="ratio ratio-16x9">
-                  <iframe
-                    class="embed-responsive-item"
-                    src=""
-                    id="video"
-                    allowfullscreen
-                    allowscriptaccess="always"
-                    allow="autoplay"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h1 class="text-white mb-4">Tesisat Hizmetleri</h1>
-        <h3 class="text-white mb-0">
-          Haftanın 7 Günü 24 Saat Tesisat Hizmetleri
-        </h3>
-      </div>
-      <!-- Testimonial Start -->
-      <div id="references" "container-xxl py-5 wow fadeInUp"
-      data-wow-delay="0.1s">
+    <!-- Testimonial Start -->
+    <div
+      id="references"
+      class="container-xxl py-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
       <div class="container">
         <div class="text-center">
           <h6 class="text-secondary text-uppercase">Referanslar</h6>
@@ -613,15 +671,32 @@
             </div>
             <img
               class="bg-light rounded-circle p-2 mx-auto mb-2"
-              src="img/testimonial-1.jpg"
+              data-src="img/testimonial-1.jpg"
               style="width: 80px; height: 80px"
+              alt="Yılmaz Insaat"
+              loading="lazy"
             />
             <div class="mb-2">
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
             </div>
             <h5 class="mb-1">Yılmaz Insaat</h5>
             <p class="m-0">Insaat Sirketi</p>
@@ -635,17 +710,34 @@
             </div>
             <img
               class="bg-light rounded-circle p-2 mx-auto mb-2"
-              src="img/testimonial-2.jpg"
+              data-src="img/testimonial-2.jpg"
               style="width: 80px; height: 80px"
+              alt="Dağdelen Yapı"
+              loading="lazy"
             />
             <div class="mb-2">
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
             </div>
-            <h5 class="mb-1">Dagdelen Yapı</h5>
+            <h5 class="mb-1">Dağdelen Yapı</h5>
             <p class="m-0">Malzeme Dükkanı</p>
           </div>
           <div class="testimonial-item text-center">
@@ -657,18 +749,35 @@
             </div>
             <img
               class="bg-light rounded-circle p-2 mx-auto mb-2"
-              src="img/testimonial-3.jpg"
+              data-src="img/testimonial-3.jpg"
               style="width: 80px; height: 80px"
+              alt="Akkaya Tamir"
+              loading="lazy"
             />
             <div class="mb-2">
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
             </div>
             <h5 class="mb-1">Akkaya Tamir</h5>
-            <p class="m-0">Otomativ</p>
+            <p class="m-0">Otomotiv</p>
           </div>
           <div class="testimonial-item text-center">
             <div class="testimonial-text bg-light text-center p-4 mb-4">
@@ -679,15 +788,32 @@
             </div>
             <img
               class="bg-light rounded-circle p-2 mx-auto mb-2"
-              src="img/testimonial-4.jpg"
+              data-src="img/testimonial-4.jpg"
               style="width: 80px; height: 80px"
+              alt="Kocalar Insaat"
+              loading="lazy"
             />
             <div class="mb-2">
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
-              <small class="fa fa-star text-secondary"></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
+              <small
+                class="fa fa-star text-secondary"
+                aria-hidden="true"
+              ></small>
             </div>
             <h5 class="mb-1">Kocalar Insaat</h5>
             <p class="m-0">Insaat Sirketi</p>
@@ -707,11 +833,12 @@
           <div class="col-lg-3 col-md-6">
             <h4 class="text-light mb-4">Adres</h4>
             <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>Pursaklar, Ankara,
-              Turkiye
+              <i class="fa fa-map-marker-alt me-3" aria-hidden="true"></i
+              >Pursaklar, Ankara, Turkiye
             </p>
             <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+90 552 819 2511
+              <i class="fa fa-phone-alt me-3" aria-hidden="true"></i>+90 552 819
+              2511
             </p>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -723,14 +850,14 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <h4 class="text-light mb-4">Servislerimiz</h4>
-            <a class="btn btn-link" href="">Su Kacak Tespiti</a>
+            <a class="btn btn-link" href="">Su Kaçak Tespiti</a>
             <a class="btn btn-link" href="">0'dan Tesisat Döşeme</a>
             <a class="btn btn-link" href="">Tesisat Bakım & Onarımı</a>
             <a class="btn btn-link" href="">Kanalizasyon Onarımı</a>
             <a class="btn btn-link" href="">Tuvalet Borusu Onarımı</a>
           </div>
           <div class="col-lg-3 col-md-6">
-            <h4 class="text-light mb-4">Hizmet Bolgeleri</h4>
+            <h4 class="text-light mb-4">Hizmet Bölgeleri</h4>
             <p>Ankara'nın her bölgesine fiyat farksız servisimiz mevcuttur.</p>
           </div>
         </div>
@@ -739,11 +866,11 @@
         <div class="copyright">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">Secen Tesisat</a>, bütün
+              &copy; <a class="border-bottom" href="#">Seçen Tesisat</a>, bütün
               hakları saklıdır.
             </div>
             <div class="col-md-6 text-center text-md-end">
-              Benzer Siteler yaptirmak için
+              Benzer Siteler yaptırmak için
               <a
                 class="border-bottom"
                 href="https://www.linkedin.com/in/kerim-sekili/"
@@ -756,10 +883,13 @@
       </div>
     </div>
     <!-- Footer End -->
+
+    <!-- Back to Top -->
     <a
       class="btn btn-lg btn-primary btn-lg-square rounded-0 whatsapp-button"
       href="https://wa.me/+905528192511"
       target="_blank"
+      aria-label="WhatsApp"
     >
       <i class="bi bi-whatsapp"></i>
     </a>
@@ -768,23 +898,30 @@
       class="btn btn-lg btn-primary btn-lg-square rounded-0 call-button"
       href="tel:5528192511"
       target="_blank"
+      aria-label="Call"
     >
       <i class="bi bi-telephone"></i>
     </a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="lib/wow/wow.min.js" defer></script>
+    <script src="lib/easing/easing.min.js" defer></script>
+    <script src="lib/waypoints/waypoints.min.js" defer></script>
+    <script src="lib/counterup/counterup.min.js" defer></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js" defer></script>
+    <script src="lib/tempusdominus/js/moment.min.js" defer></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js" defer></script>
+    <script
+      src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"
+      defer
+    ></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
