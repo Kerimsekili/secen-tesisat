@@ -28,6 +28,10 @@ html {
 }
 
 .back-to-top {
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+
   position: fixed;
   display: none;
   right: 45px;
