@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Seçen Tesisat | Kamera ile Su Kaçak Tespiti</title>
+    <meta
+      name="description"
+      content="Profesyonel kamera ile su kaçağı tespiti. En son teknoloji cihazlarla kırmadan dökmeden su kaçağı tespiti yapıyoruz."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Seçen Tesisat" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Include all your existing stylesheet links from index.html -->
+    <link rel="icon" href="../img/favicon.png" type="png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Include your spinner, topbar, and navbar code from index.html -->
+    <body>
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+  
+      <!-- Topbar Start -->
+      <div class="container-fluid bg-light d-none d-lg-block">
+        <div class="row align-items-center top-bar">
+          <div class="col-lg-3 col-md-6 text-center text-md-start">
+            <a href="../index.html" class="navbar-brand m-0 p-0">
+              <h1 class="text-primary m-0">Seçen Tesisat</h1>
+            </a>
+          </div>
+          <div class="col-lg-9 col-md-6 text-end">
+            <div class="h-100 d-inline-flex align-items-center me-4">
+              <i class="fa fa-map-marker-alt text-primary me-2"></i>
+              <p class="m-0">Ankara , Türkiye</p>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center">
+              <a class="btn btn-sm-square bg-white text-primary me-1" href="#"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a class="btn btn-sm-square bg-white text-primary me-1" href="#"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a class="btn btn-sm-square bg-white text-primary me-1" href="#"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a class="btn btn-sm-square bg-white text-primary me-0" href="#"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Topbar End -->
+  
+      <!-- Navbar Start -->
+      <div class="container-fluid nav-bar bg-light">
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4"
+        >
+          <a
+            href="../index.html"
+            class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none"
+          >
+            <h1 class="text-primary m-0">Seçen Tesisat</h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav me-auto">
+              <a href="../index.html" class="nav-item nav-link">Anasayfa</a>
+              <a href="../index.html#hakkimizda" class="nav-item nav-link"
+                >Hakkimizda</a
+              >
+              <a href="../index.html#services" class="nav-item nav-link"
+                >Servisler</a
+              >
+              <a href="../index.html#references" class="nav-item nav-link"
+                >Referanslar</a
+              >
+            </div>
+            <a href="tel:+905528192511" class="text-decoration-none">
+              <div
+                class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center"
+              >
+                <div
+                  class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
+                  style="width: 45px; height: 45px"
+                >
+                  <i class="fa fa-phone-alt text-primary"></i>
+                </div>
+                <div class="ms-3">
+                  <p class="mb-1 text-white">7/24 Ulaşım Hattı</p>
+                  <h5 class="m-0 text-secondary">+90 552 819 2511</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </nav>
+      </div>
+      <!-- Navbar End -->
+
+    <!-- Service Header Start -->
+    <div class="container-fluid page-header mb-5 py-5">
+      <div class="container">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">
+          Kamera ile Su Kaçak Tespiti
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb text-uppercase">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="../index.html">Anasayfa</a>
+            </li>
+            <li class="breadcrumb-item text-white active" aria-current="page">
+              Su Kaçak Tespiti
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+  
+
+    <!-- Service Content Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="position-relative overflow-hidden h-100">
+              <img
+                class="img-fluid w-100 h-100"
+                src="../img/service-4.jpg"
+                alt="Su Kaçak Tespiti"
+                loading="lazy"
+                style="object-fit: cover; min-height: 500px"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+            <h1 class="mb-4">Su Kaçak Tespiti Nasıl Yapılır?</h1>
+            <p class="mb-4">
+              Su kaçakları, hem maddi kayıplara yol açan hem de yapıya ciddi
+              zarar verebilen önemli bir sorundur. Geleneksel yöntemlerle kaçak
+              tespiti zahmetli ve maliyetli olabilirken, günümüzde gelişmiş
+              teknolojiler sayesinde su kaçağı tespiti çok daha kolay hale
+              gelmiştir. Seçen Tesisat, uzman ekibi ve son teknoloji
+              cihazlarıyla kırmadan dökmeden su kaçak tespiti yaparak hızlı ve
+              kalıcı çözümler sunmaktadır.
+            </p>
+
+            <a
+              href="tel:+905528192511"
+              class="btn btn-primary py-3 px-5 mt-3 mb-4"
+            >
+              Hemen Ara
+            </a>
+          </div>
+
+          <!-- Full Width Content Sections -->
+          <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-section mb-5">
+              <h2 class="mb-4">Su Kaçağı Nasıl Anlaşılır?</h2>
+              <p>
+                Evinizde ya da iş yerinizde aşağıdaki belirtileri fark
+                ediyorsanız, su kaçağı ihtimali oldukça yüksektir:
+              </p>
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fa fa-exclamation-triangle text-warning me-2"></i
+                  >Duvarlarda ve tavanda rutubet lekeleri
+                </li>
+                <li>
+                  <i class="fa fa-exclamation-triangle text-warning me-2"></i>Su
+                  faturasında anormal artış
+                </li>
+                <li>
+                  <i class="fa fa-exclamation-triangle text-warning me-2"></i
+                  >Fayans aralarında ya da zeminde ıslaklık
+                </li>
+                <li>
+                  <i class="fa fa-exclamation-triangle text-warning me-2"></i
+                  >Musluklar kapalıyken su sayacının dönmeye devam etmesi
+                </li>
+                <li>
+                  <i class="fa fa-exclamation-triangle text-warning me-2"></i
+                  >Kötü kokular ve küflenme
+                </li>
+              </ul>
+              <p class="mt-3">
+                Bu belirtilerden biri veya birkaçı mevcutsa, vakit kaybetmeden
+                profesyonel destek almanız gerekir.
+              </p>
+            </div>
+
+            <div class="service-section mb-5">
+              <h2 class="mb-4">Su Kaçak Tespiti Nasıl Yapılır?</h2>
+              <p class="mb-4">
+                Eskiden su kaçaklarını bulmak için duvarlar kırılır, borular tek
+                tek kontrol edilirdi. Ancak Seçen Tesisat, modern ekipmanlarla
+                su kaçağını noktasal olarak tespit eder ve gereksiz masrafın
+                önüne geçer. İşte kullanılan yöntemler:
+              </p>
+              <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                  <div class="service-item bg-light p-4">
+                    <h4>1. Akustik Dinleme Cihazları</h4>
+                    <p>
+                      Basınçlı suyun borular içinde oluşturduğu ses dalgaları
+                      özel cihazlarla dinlenerek kaçak noktası tespit edilir. Bu
+                      yöntem özellikle temiz su tesisatındaki kaçakları
+                      belirlemede oldukça etkilidir.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="service-item bg-light p-4">
+                    <h4>2. Termal Kamera</h4>
+                    <p>
+                      Sıcak su tesisatlarındaki kaçakları belirlemek için termal
+                      kameralar kullanılır. Sıcaklık farklarını analiz ederek
+                      suyun hangi noktadan sızdığını tespit etmek mümkündür.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="service-item bg-light p-4">
+                    <h4>3. Nem Ölçer Cihazları</h4>
+                    <p>
+                      Duvar içinde veya zeminde meydana gelen gizli kaçakları
+                      bulmada kullanılan nem ölçer cihazları, yüzeyin altındaki
+                      nem yoğunluğunu ölçerek sorunun kaynağını belirler.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="service-item bg-light p-4">
+                    <h4>4. Kameralı Görüntüleme</h4>
+                    <p>
+                      Pis su tesisatlarındaki kaçakları tespit etmek için
+                      kameralı boru görüntüleme cihazları kullanılır. Bu sayede
+                      boruların içini detaylı şekilde inceleyerek sorunlar
+                      belirlenir.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-section text-center">
+              <h2 class="mb-4">
+                Seçen Tesisat ile Su Kaçaklarına Kalıcı Çözümler
+              </h2>
+              <p class="mb-4">
+                Su kaçağı problemleri, zamanında müdahale edilmediğinde büyük
+                maddi zararlara neden olabilir. Seçen Tesisat, deneyimli ekibi
+                ve son teknoloji ekipmanları ile su kaçağını kırmadan tespit
+                eder ve sorunu minimum maliyetle çözer.
+              </p>
+              <p class="mb-4">
+                Eğer su kaçağından şüpheleniyorsanız, Seçen Tesisat ile
+                iletişime geçerek profesyonel destek alabilirsiniz. Erken
+                müdahale, su kaçağı kaynaklı yüksek maliyetlerden ve yapı
+                hasarlarından korunmanıza yardımcı olur.
+              </p>
+              <div class="mt-4">
+                <h4 class="mb-3">
+                  Su kaçağı tespiti ve onarımı için güvenilir adres: Seçen
+                  Tesisat!
+                </h4>
+                <a href="tel:+905528192511" class="btn btn-primary py-3 px-5">
+                  Hemen Ara
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Adres</h4>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3"></i>Ankara, Turkiye
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-3"></i>+90 552 819 2511
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Açılış Saatleri</h4>
+            <h6 class="text-light">Pazartesi - Cuma :</h6>
+            <p class="mb-4">09.00 AM - 09.00 PM</p>
+            <h6 class="text-light">Cumartesi:</h6>
+            <p class="mb-0">09.00 AM - 3.00 PM</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Servislerimiz</h4>
+            <a class="btn btn-link" href="su-kacak-tespiti.html"
+              >Su Kaçak Tespiti</a
+            >
+            <a class="btn btn-link" href="tesisat-kurulumu.html"
+              >0'dan Tesisat Döşeme</a
+            >
+            <a class="btn btn-link" href="tikaniklik-acma.html"
+              >Tıkanıklık Açma</a
+            >
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Hizmet Bölgeleri</h4>
+            <p>Ankara'nın her bölgesine fiyat farksız servisimiz mevcuttur.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">Seçen Tesisat</a>, bütün
+              hakları saklıdır.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              Benzer Siteler yaptırmak için
+              <a
+                class="border-bottom"
+                href="https://www.linkedin.com/in/kerim-sekili/"
+                target="_blank"
+                >ulaşın</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a
+      class="btn btn-lg btn-primary btn-lg-square rounded-0 whatsapp-button"
+      href="https://wa.me/+905528192511"
+      target="_blank"
+      aria-label="WhatsApp"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <a
+      class="btn btn-lg btn-primary btn-lg-square rounded-0 call-button"
+      href="tel:5528192511"
+      target="_blank"
+      aria-label="Call"
+    >
+      <i class="bi bi-telephone"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="../lib/wow/wow.min.js" defer></script>
+    <script src="../lib/easing/easing.min.js" defer></script>
+    <script src="../lib/waypoints/waypoints.min.js" defer></script>
+    <script src="../lib/counterup/counterup.min.js" defer></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js" defer></script>
+    <script src="../lib/tempusdominus/js/moment.min.js" defer></script>
+    <script src="../lib/tempusdominus/js/moment-timezone.min.js" defer></script>
+    <script
+      src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"
+      defer
+    ></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>
